@@ -1,7 +1,7 @@
 iTunesAPI [![NuGet](https://img.shields.io/nuget/v/iTunesAPI.svg)](https://www.nuget.org/packages/iTunesAPI)
 ============
 
-.NET port [iTunesSearch ](https://github.com/danesparza/iTunesSearch) as crossplatform
+.NET port [iTunesSearch ](https://github.com/danesparza/iTunesSearch) as crossplatform based on .NET 5
 
 ### Quick Start
 
