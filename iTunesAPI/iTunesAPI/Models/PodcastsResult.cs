@@ -6,12 +6,12 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 namespace iTunesAPI.Models
 {
-    public class AlbumResult
+    public class PodcastsResult
     {
         [JsonPropertyName("resultCount")]
         public int Count { get; set; }
 
         [JsonPropertyName("results")]
-        public List<Album> Albums { get; set; }
+        public List<Podcast> Podcasts { get; set; }
     }
 }
