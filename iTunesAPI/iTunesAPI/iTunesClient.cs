@@ -1,4 +1,5 @@
-﻿using iTunesAPI.Services.Interfaces;
+﻿using iTunesAPI.Services;
+using iTunesAPI.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,6 @@ namespace iTunesAPI
 {
     public class iTunesClient
     {
-
-        private HttpClient client;
-
         private IAlbumService album;
         private IArtistService artist;
         private IPodcastService podcast;
@@ -19,6 +17,10 @@ namespace iTunesAPI
         private ITVEpisodeService tvEposide;
         private ITVSeasonService tvSeason;
 
+
+        public iTunesClient()
+            :this(new AlbumService(), new ArtistService(), new PodcastService(), new SongService(), new TVEpisodeService(), new TVSeasonService())
+        { }
         public iTunesClient(IAlbumService album, IArtistService artist, IPodcastService podcast, ISongService song, ITVEpisodeService tvEposide, ITVSeasonService tvSeason)
         {
             this.album = album;
