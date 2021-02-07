@@ -12,6 +12,6 @@ namespace iTunesAPI.Models
         public int Count { get; set; }
 
         [JsonPropertyName("results")]
-        public List<TVEpisode> Episodes { get; set; }]
+        public List<TVEpisode> Episodes { get; set; }
     }
 }
