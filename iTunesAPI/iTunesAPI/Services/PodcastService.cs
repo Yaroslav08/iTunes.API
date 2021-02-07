@@ -14,7 +14,7 @@ namespace iTunesAPI.Services
         {
             var nvc = HttpUrlBuilder.ParseQueryString(string.Empty);
             nvc.Add("id", podcastId.ToString());
-            var result = await MakeRequestAsync<PodcastsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<PodcastsResult>(GetFinalUrl(nvc));
             return result;
         }
 
@@ -26,7 +26,7 @@ namespace iTunesAPI.Services
             nvc.Add("attribute", "titleTerm");
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<PodcastsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<PodcastsResult>(GetFinalUrl(nvc));
             return result;
         }
     }

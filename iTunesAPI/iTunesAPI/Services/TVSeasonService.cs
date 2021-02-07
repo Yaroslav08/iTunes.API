@@ -14,7 +14,7 @@ namespace iTunesAPI.Services
         {
             var nvc = HttpUrlBuilder.ParseQueryString(string.Empty);
             nvc.Add("id", seasonId.ToString());
-            var result = await MakeRequestAsync<TVSeasonsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<TVSeasonsResult>(GetFinalUrl(nvc));
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace iTunesAPI.Services
             nvc.Add("attribute", "showTerm");
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<TVSeasonsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<TVSeasonsResult>(GetFinalUrl(nvc));
             return result;
         }
     }

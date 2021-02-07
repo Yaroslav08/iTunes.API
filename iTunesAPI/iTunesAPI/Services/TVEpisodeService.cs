@@ -19,7 +19,7 @@ namespace iTunesAPI.Services
             nvc.Add("attribute", "showTerm");
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<TVEpisodesResult>(nvc.ToString());
+            var result = await MakeRequestAsync<TVEpisodesResult>(GetFinalUrl(nvc));
             return result;
         }
     }

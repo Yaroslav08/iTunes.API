@@ -22,7 +22,7 @@ namespace iTunesAPI.Services
             }
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<SongsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<SongsResult>(GetFinalUrl(nvc));
             return result;
         }
     }

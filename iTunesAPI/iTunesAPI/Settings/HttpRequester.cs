@@ -12,10 +12,14 @@ namespace iTunesAPI.Settings
         protected async Task<T> MakeRequestAsync<T>(string url)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(Config.BaseSearchUrl);
             var result = await client.GetStringAsync(url);
             var obj = JsonSerializer.Deserialize<T>(result);
             return obj;
+        }
+
+        protected string GetFinalUrl(HttpValueCollection nc)
+        {
+            return Config.BaseSearchUrl + nc.ToString();
         }
     }
 }

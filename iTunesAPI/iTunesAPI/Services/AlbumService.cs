@@ -18,7 +18,7 @@ namespace iTunesAPI.Services
             }
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<AlbumsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<AlbumsResult>(GetFinalUrl(nvc));
             return result;
         }
 
@@ -29,7 +29,7 @@ namespace iTunesAPI.Services
             nvc.Add("entity", "album");
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<AlbumsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<AlbumsResult>(GetFinalUrl(nvc));
             return result;
         }
 
@@ -41,7 +41,7 @@ namespace iTunesAPI.Services
             nvc.Add("entity", "album");
             nvc.Add("limit", limit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<AlbumsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<AlbumsResult>(GetFinalUrl(nvc));
             return result;
         }
 
@@ -58,7 +58,7 @@ namespace iTunesAPI.Services
             }
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<AlbumsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<AlbumsResult>(GetFinalUrl(nvc));
             return result;
         }
     }

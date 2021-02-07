@@ -14,7 +14,7 @@ namespace iTunesAPI.Services
         {
             var nvc = HttpUrlBuilder.ParseQueryString(string.Empty);
             nvc.Add("id", artistId.ToString());
-            var result = (await MakeRequestAsync<ArtistsResult>(nvc.ToString())).Artists.FirstOrDefault();
+            var result = (await MakeRequestAsync<ArtistsResult>(GetFinalUrl(nvc))).Artists.FirstOrDefault();
             return result ?? new Artist();
         }
 
@@ -22,7 +22,7 @@ namespace iTunesAPI.Services
         {
             var nvc = HttpUrlBuilder.ParseQueryString(string.Empty);
             nvc.Add("amgArtistId", amgArtistId.ToString());
-            var result = (await MakeRequestAsync<ArtistsResult>(nvc.ToString())).Artists.FirstOrDefault();
+            var result = (await MakeRequestAsync<ArtistsResult>(GetFinalUrl(nvc))).Artists.FirstOrDefault();
             return result ?? new Artist();
         }
 
@@ -35,7 +35,7 @@ namespace iTunesAPI.Services
             nvc.Add("attribute", "artistTerm");
             nvc.Add("limit", resultLimit.ToString());
             nvc.Add("country", countryCode);
-            var result = await MakeRequestAsync<ArtistsResult>(nvc.ToString());
+            var result = await MakeRequestAsync<ArtistsResult>(GetFinalUrl(nvc));
             return result;
         }
     }
