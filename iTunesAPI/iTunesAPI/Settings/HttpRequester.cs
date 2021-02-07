@@ -9,7 +9,7 @@ namespace iTunesAPI.Settings
 {
     public class HttpRequester
     {
-        protected async Task<T> MakeRequstAsync<T>(string url)
+        protected async Task<T> MakeRequestAsync<T>(string url)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(Config.BaseSearchUrl);
