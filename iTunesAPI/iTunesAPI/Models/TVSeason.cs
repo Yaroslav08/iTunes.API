@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 namespace iTunesAPI.Models
 {
     public class TVSeason
@@ -74,7 +70,6 @@ namespace iTunesAPI.Models
                     retval = Convert.ToInt32(newString);
                 }
                 catch (Exception) { }
-
                 return retval;
             }
         }
@@ -84,13 +79,11 @@ namespace iTunesAPI.Models
             get
             {
                 string retval = string.Empty;
-
                 try
                 {
                     retval = this.ArtworkUrl.Replace("100x100", "600x600");
                 }
                 catch (Exception) { }
-
                 return retval;
             }
         }

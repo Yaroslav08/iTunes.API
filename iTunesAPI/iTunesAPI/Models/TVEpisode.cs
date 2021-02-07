@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 namespace iTunesAPI.Models
 {
     public class TVEpisode
@@ -98,12 +94,10 @@ namespace iTunesAPI.Models
             get
             {
                 string retval = string.Empty;
-
                 if (!string.IsNullOrEmpty(this.ArtworkUrl))
                 {
                     retval = this.ArtworkUrl.Replace("100x100", "600x600");
                 }
-
                 return retval;
             }
         }
@@ -113,14 +107,12 @@ namespace iTunesAPI.Models
             get
             {
                 int retval = 0;
-
                 try
                 {
                     string newString = Regex.Replace(this.SeasonName, "[^.0-9]", "");
                     retval = Convert.ToInt32(newString);
                 }
                 catch (Exception) { }
-
                 return retval;
             }
         }

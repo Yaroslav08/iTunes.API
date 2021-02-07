@@ -1,10 +1,6 @@
 ﻿using iTunesAPI.Models;
 using iTunesAPI.Services.Interfaces;
 using iTunesAPI.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 namespace iTunesAPI.Services
 {

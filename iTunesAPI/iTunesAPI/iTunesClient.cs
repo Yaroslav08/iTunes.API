@@ -1,11 +1,5 @@
 ﻿using iTunesAPI.Services;
 using iTunesAPI.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 namespace iTunesAPI
 {
     public class iTunesClient
@@ -32,6 +26,7 @@ namespace iTunesAPI
             this.tvEposide = tvEposide;
             this.tvSeason = tvSeason;
         }
+
 
         public IAlbumService Album => album;
         public IArtistService Artist => artist;
