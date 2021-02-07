@@ -14,6 +14,7 @@ namespace iTunesApi.Sample
             var res = await client.Song.GetSongsAsync("Roses", 200);
             foreach (var item in res.Songs)
             {
+                Console.WriteLine(item.TrackName);
                 RunPreviewMusic(item.PreviewUrl);
             }
 
