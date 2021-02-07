@@ -10,6 +10,8 @@ namespace iTunesAPI
 {
     public class iTunesClient
     {
+        private string version = "1.0";
+
         private IAlbumService album;
         private IArtistService artist;
         private IPodcastService podcast;
@@ -37,5 +39,6 @@ namespace iTunesAPI
         public ISongService Song => song;
         public ITVEpisodeService TvEposide => tvEposide;
         public ITVSeasonService TvSeason => tvSeason;
+        public string Version => version;
     }
 }
